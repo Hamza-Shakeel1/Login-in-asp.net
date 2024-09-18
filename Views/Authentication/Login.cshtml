@@ -1,0 +1,14 @@
+﻿@using Logins.ViewModel;
+@model LoginVM;
+<body>
+	<form  asp-controller="Authentication" asp-action="Login" method="post">
+		<input type="text" placeholder="Email or username" asp-for="UserName" />
+
+		<input type="password" placeholder="PassWord" asp-for="Password" />
+		<button type="submit">Login</button>
+		@if (ViewData["ValidateMessage"] != null)
+		{
+				<label class="validate-message">@ViewData["ValidateMessage"]></label>
+		}
+	</form>
+</body>
